@@ -1,0 +1,1173 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Emhemed Elahresh – Author & Visionary</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+Pro:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+    
+    .font-serif { font-family: 'Crimson Text', serif; }
+    .font-display { font-family: 'Lora', serif; }
+    .font-sans { font-family: 'Source Sans Pro', sans-serif; }
+    .font-title { font-family: 'Playfair Display', serif; }
+    
+    body {
+      background-color: #fefefe;
+      color: #2c2c2c;
+    }
+    
+    .elegant-bg {
+      background: linear-gradient(135deg, #f8f6f0 0%, #e8e2d4 50%, #f0ede3 100%);
+      position: relative;
+    }
+    
+    .elegant-bg::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4c5a9' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    
+    .book-card {
+      transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      border: 1px solid #e5e1d8;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .book-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      transition: left 0.5s;
+    }
+    
+    .book-card:hover::before {
+      left: 100%;
+    }
+    
+    .book-card:hover {
+      transform: translateY(-16px) scale(1.02);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+      border-color: #8b6914;
+    }
+    
+    .text-accent { color: #8b6914; }
+    .bg-accent { background-color: #8b6914; }
+    .border-accent { border-color: #8b6914; }
+    
+    .text-secondary { color: #6b5b73; }
+    .bg-secondary { background-color: #6b5b73; }
+    
+    .fade-in {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero-text {
+      animation: fadeInUp 1.5s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(80px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .elegant-divider {
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #8b6914, #d4c5a9, #8b6914, transparent);
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .elegant-divider::before,
+    .elegant-divider::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 8px;
+      height: 8px;
+      background: #8b6914;
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
+
+    .elegant-divider::before {
+      left: -12px;
+    }
+
+    .elegant-divider::after {
+      right: -12px;
+    }
+
+    .quote-mark {
+      font-size: 5rem;
+      line-height: 1;
+      color: #8b6914;
+      opacity: 0.2;
+      font-family: 'Lora', serif;
+    }
+
+    .nav-link {
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -6px;
+      left: 50%;
+      background: linear-gradient(90deg, #8b6914, #d4c5a9);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .section-number {
+      font-family: 'Lora', serif;
+      font-size: 8rem;
+      font-weight: 200;
+      color: #f5f5f5;
+      position: absolute;
+      top: -3rem;
+      left: -2rem;
+      z-index: 0;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .content-overlay {
+      position: relative;
+      z-index: 1;
+    }
+
+    .floating-element {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #8b6914, #d4c5a9, #6b5b73);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .shimmer {
+      background: linear-gradient(45deg, #f0f0f0 25%, transparent 25%, transparent 75%, #f0f0f0 75%);
+      background-size: 20px 20px;
+      animation: shimmer 2s linear infinite;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 0 0; }
+      100% { background-position: 20px 20px; }
+    }
+
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .hover-glow:hover {
+      box-shadow: 0 0 30px rgba(139, 105, 20, 0.3);
+    }
+
+    .text-shadow {
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .book-spine {
+      background: linear-gradient(135deg, #8b6914, #d4c5a9);
+      width: 8px;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .book-card:hover .book-spine {
+      opacity: 1;
+    }
+
+    .parallax-bg {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .typewriter {
+      overflow: hidden;
+      border-right: 3px solid #8b6914;
+      white-space: nowrap;
+      margin: 0 auto;
+      animation: typing 4s steps(40, end), blink-caret 1s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: #8b6914 }
+    }
+
+    .ornament {
+      position: relative;
+    }
+
+    .ornament::before,
+    .ornament::after {
+      content: '❦';
+      position: absolute;
+      color: #8b6914;
+      opacity: 0.3;
+      font-size: 2rem;
+    }
+
+    .ornament::before {
+      left: -3rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .ornament::after {
+      right: -3rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .pulse-glow {
+      animation: pulseGlow 3s ease-in-out infinite;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 20px rgba(139, 105, 20, 0.3); }
+      50% { box-shadow: 0 0 40px rgba(139, 105, 20, 0.6); }
+    }
+
+    .stagger-animation {
+      animation-delay: calc(var(--i) * 0.1s);
+    }
+  </style>
+</head>
+<body class="font-sans bg-gray-50">
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full glass-effect z-50 border-b border-white/20">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="font-title text-2xl font-medium text-gray-800 tracking-wide gradient-text">Emhemed Elahresh</div>
+      <div class="hidden md:flex space-x-8">
+        <a href="#home" class="nav-link text-gray-700 hover:text-accent font-medium tracking-wide">Home</a>
+        <a href="#about" class="nav-link text-gray-700 hover:text-accent font-medium tracking-wide">About</a>
+        <a href="#books" class="nav-link text-gray-700 hover:text-accent font-medium tracking-wide">Books</a>
+        <a href="#hunger" class="nav-link text-gray-700 hover:text-red-600 font-medium tracking-wide">🍽️ Fight World Hunger</a>
+        <a href="#contact" class="nav-link text-gray-700 hover:text-accent font-medium tracking-wide">Contact</a>
+      </div>
+      <button id="menu-toggle" class="md:hidden p-2 text-gray-700 hover:text-accent transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden glass-effect border-t border-white/20">
+      <div class="px-6 py-4 space-y-3">
+        <a href="#home" class="block py-2 text-gray-700 font-medium hover:text-accent transition-colors">Home</a>
+        <a href="#about" class="block py-2 text-gray-700 font-medium hover:text-accent transition-colors">About</a>
+        <a href="#books" class="block py-2 text-gray-700 font-medium hover:text-accent transition-colors">Books</a>
+        <a href="#hunger" class="block py-2 text-gray-700 font-medium hover:text-red-600 transition-colors">🍽️ Fight World Hunger</a>
+        <a href="#contact" class="block py-2 text-gray-700 font-medium hover:text-accent transition-colors">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="elegant-bg min-h-screen flex items-center justify-center relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-secondary/5"></div>
+    <div class="max-w-6xl mx-auto px-6 py-20 text-center relative z-10">
+      <div class="hero-text">
+        <div class="mb-12">
+          <div class="w-48 h-48 mx-auto mb-8 rounded-full bg-white shadow-2xl flex items-center justify-center border-4 border-accent/20 floating-element pulse-glow overflow-hidden">
+            <!-- Replace the src below with your image URL -->
+            <img src="https://your-image-url-here.jpg" alt="Emhemed Elahresh - Author Photo" class="w-full h-full object-cover rounded-full" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <span class="text-6xl font-display font-medium gradient-text hidden">ME</span>
+          </div>
+        </div>
+        <h1 class="font-title text-7xl md:text-9xl font-medium mb-8 text-gray-800 tracking-tight leading-tight text-shadow">
+          Emhemed<br>
+          <span class="gradient-text ornament">Elahresh</span>
+        </h1>
+        <div class="elegant-divider mb-12"></div>
+        <div class="font-serif text-xl md:text-2xl mb-12 text-gray-600 italic max-w-4xl mx-auto leading-relaxed">
+          "Crafting stories that blend heart, heritage, and hope. Every book is a legacy in motion, designed to uplift and empower readers across the globe."
+        </div>
+        <div class="space-x-6 mt-16">
+          <a href="#books" class="inline-block bg-accent hover:bg-accent/90 text-white px-12 py-5 font-medium tracking-wide transition-all duration-500 transform hover:scale-110 shadow-2xl hover-glow">
+            Explore My Books
+          </a>
+          <a href="#about" class="inline-block border-2 border-accent text-accent hover:bg-accent hover:text-white px-12 py-5 font-medium tracking-wide transition-all duration-500 hover:scale-105">
+            Learn More
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-32 bg-white relative overflow-hidden">
+    <div class="absolute inset-0 shimmer opacity-5"></div>
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="section-number">01</div>
+      <div class="content-overlay">
+        <div class="fade-in text-center mb-24">
+          <h2 class="font-display text-6xl md:text-7xl font-medium text-gray-800 mb-8 tracking-tight text-shadow">About the Author</h2>
+          <div class="elegant-divider"></div>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-20 items-center">
+          <div class="fade-in order-2 md:order-1">
+            <div class="relative">
+              <div class="quote-mark absolute -top-6 -left-6">"</div>
+              <p class="font-serif text-2xl text-gray-700 leading-relaxed mb-10 pl-12">
+                <strong class="text-accent font-medium">Emhemed Elahresh</strong>, known as Moe, is a visionary storyteller and entrepreneur whose writing blends heart, heritage, and hope. From children's stories to reflective novels, his works are designed to uplift, educate, and empower readers across the globe.
+              </p>
+            </div>
+            
+            <p class="font-serif text-xl text-gray-600 leading-relaxed mb-10">
+              Through his <strong class="text-secondary font-medium">Victory Hour Enterprises™</strong>, Moe merges creativity with purpose—donating 10% of proceeds to help feed the hungry. Each book is more than a story—it's a legacy in motion.
+            </p>
+            
+            <div class="glass-effect p-10 border-l-4 border-accent shadow-xl">
+              <h3 class="font-display text-2xl font-medium text-gray-800 mb-6">Mission Statement</h3>
+              <p class="font-serif text-gray-600 italic leading-relaxed text-lg">
+                "To create stories that not only entertain but transform lives, building bridges between cultures while feeding both minds and bodies."
+              </p>
+            </div>
+          </div>
+          
+          <div class="fade-in order-1 md:order-2">
+            <div class="relative">
+              <div class="w-96 h-96 mx-auto bg-gradient-to-br from-accent/10 to-secondary/10 rounded-full flex items-center justify-center shadow-2xl floating-element">
+                <div class="w-80 h-80 bg-white rounded-full flex items-center justify-center shadow-xl overflow-hidden">
+                  <!-- Replace the src below with your image URL -->
+                  <img src="https://your-image-url-here.jpg" alt="Emhemed Elahresh - Author Photo" class="w-full h-full object-cover rounded-full" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                  <span class="text-8xl font-display font-medium gradient-text hidden">ME</span>
+                </div>
+              </div>
+              <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-accent/20 rounded-full floating-element" style="animation-delay: -2s;"></div>
+              <div class="absolute -top-6 -left-6 w-20 h-20 bg-secondary/20 rounded-full floating-element" style="animation-delay: -4s;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Book Section -->
+  <section class="py-32 elegant-bg relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="section-number">02</div>
+      <div class="content-overlay">
+        <div class="fade-in text-center mb-24">
+          <div class="inline-flex items-center glass-effect text-accent px-8 py-4 font-medium tracking-wide mb-8 shadow-lg">
+            ✦ Coming Soon
+          </div>
+          <h2 class="font-display text-6xl md:text-7xl font-medium text-gray-800 mb-8 tracking-tight text-shadow">Upcoming Releases</h2>
+          <div class="elegant-divider"></div>
+        </div>
+        
+        <!-- Piggy Bank Pirates -->
+        <div class="grid md:grid-cols-2 gap-20 items-center mb-24">
+          <div class="fade-in">
+            <div class="bg-white p-16 shadow-2xl border border-gray-100 relative hover-glow transition-all duration-500">
+              <div class="book-spine"></div>
+              <div class="absolute top-6 right-6 bg-blue-600 text-white px-6 py-3 text-sm font-medium tracking-wide shadow-lg">
+                Little Money Makers™ Book 2
+              </div>
+              <div class="h-96 bg-gradient-to-br from-blue-200 via-teal-200 to-blue-300 flex items-center justify-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-teal-400/20"></div>
+                <div class="text-center p-8 relative z-10">
+                  <div class="text-9xl mb-8 floating-element">🏴‍☠️💰</div>
+                  <h3 class="font-display text-4xl font-medium mb-4 text-gray-800 text-shadow">Piggy Bank Pirates</h3>
+                  <p class="font-serif text-xl text-gray-600 italic">& the Treasure Plan</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="fade-in space-y-10">
+            <div class="bg-blue-50 px-6 py-3 inline-block shadow-lg">
+              <span class="text-blue-700 font-medium text-sm tracking-wide">Little Money Makers™ Series - Book 2</span>
+            </div>
+            <h3 class="font-display text-5xl font-medium text-gray-800 tracking-tight text-shadow">Piggy Bank Pirates & the Treasure Plan</h3>
+            <p class="font-serif text-xl text-gray-700 leading-relaxed">
+              Ahoy, matey! Layla and Sam are back—and this time, they've got a big dream and a tiny piggy bank. When they spot the coolest pirate ship toy at the store, they don't beg or cry. Instead, they launch a plan… a Treasure Plan!
+            </p>
+            
+            <p class="font-serif text-xl text-gray-600 leading-relaxed">
+              Using their Spend, Save, and Share jars, Layla and Sam track every coin with care. With the help of their Grandpa's old treasure map (and a little imagination), they learn how small coins can grow into big dreams through goal-setting, patience, and kindness.
+            </p>
+            
+            <div class="glass-effect p-10 shadow-xl border-l-4 border-blue-600">
+              <h4 class="font-display text-2xl font-medium text-gray-800 mb-6">Book Information</h4>
+              <div class="space-y-3 font-serif text-gray-600 text-lg">
+                <p><strong class="text-gray-800">Series:</strong> Little Money Makers™ Book 2</p>
+                <p><strong class="text-gray-800">Genre:</strong> Children's Financial Literacy</p>
+                <p><strong class="text-gray-800">Status:</strong> Coming Soon</p>
+              </div>
+            </div>
+            
+            <button onclick="notifyMePirates()" class="bg-blue-600 hover:bg-blue-700 text-white px-12 py-5 font-medium tracking-wide transition-all duration-500 transform hover:scale-110 shadow-2xl hover-glow flex items-center space-x-4">
+              <span class="text-xl">🔔</span>
+              <span>Notify Me When Available</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- The Pickers -->
+        <div class="grid md:grid-cols-2 gap-20 items-center">
+          <div class="fade-in">
+            <div class="bg-white p-16 shadow-2xl border border-gray-100 relative hover-glow transition-all duration-500">
+              <div class="book-spine"></div>
+              <div class="absolute top-6 right-6 bg-accent text-white px-6 py-3 text-sm font-medium tracking-wide shadow-lg">
+                Coming Soon
+              </div>
+              <div class="h-96 bg-gradient-to-br from-accent/20 via-secondary/20 to-accent/30 flex items-center justify-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-accent/30 to-secondary/30"></div>
+                <div class="text-center p-8 relative z-10">
+                  <div class="text-9xl mb-8 text-accent/60 floating-element">📖</div>
+                  <h3 class="font-display text-5xl font-medium mb-4 text-gray-800 text-shadow">The Pickers</h3>
+                  <p class="font-serif text-xl text-gray-600 italic">A Story of Survival & Brotherhood</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="fade-in space-y-10">
+            <div class="glass-effect p-8 shadow-xl border-l-4 border-accent mb-8">
+              <div class="font-serif text-lg text-gray-700 leading-relaxed space-y-4">
+                <p class="text-accent font-medium text-xl">🌵 COMING SOON</p>
+                <h3 class="font-display text-4xl font-medium text-gray-800 mb-2">The Pickers</h3>
+                <p class="italic text-gray-600 mb-4">A novel by Emhemed Elahresh</p>
+                
+                <p class="font-medium text-gray-800">Five boys. A thousand kilometers. One mission: survive, and bring something home worth more than gold.</p>
+                
+                <p>In the shadow of war and the silence of the desert, five young men set out on foot across Libya—armed with nothing but courage, loyalty, and the dream of a better life.</p>
+                
+                <p>They search for scrap metal.<br>
+                They discover manhood, betrayal, brotherhood, and the soul of a land haunted by its past.</p>
+                
+                <p class="font-medium text-gray-800">Based on a true journey.<br>
+                Inspired by family.<br>
+                Forged in fire and sand.</p>
+                
+                <p class="text-accent font-medium">🔗 The Pickers is not just a story.<br>
+                It's a legacy.</p>
+                
+                <p class="font-medium text-gray-800">📖 80,000 words of grit, memory, and hope — coming soon.</p>
+              </div>
+            </div>
+
+            <!-- Book Excerpt -->
+            <div class="glass-effect p-10 shadow-xl border-l-4 border-secondary mb-8">
+              <div class="mb-6">
+                <h4 class="font-display text-2xl font-medium text-gray-800 mb-2">📖 Excerpt – "The Pickers"</h4>
+                <p class="font-serif text-lg text-secondary font-medium italic">"The Death of Samir" – The Morning After</p>
+                <p class="font-serif text-base text-gray-600 italic mt-2">Narrated by Mohamed</p>
+              </div>
+              
+              <div class="font-serif text-gray-700 leading-relaxed space-y-4 text-lg">
+                <p>I didn't sleep. None of us did. The wind howled all night, trying to erase what happened. By dawn, the sand had already begun to cover the small mound where we buried Samir. Too quick. Too easy. Like the desert wanted to swallow the memory as well as the man.</p>
+                
+                <p>Ali sat a few steps from the grave, knees to his chest, staring at nothing. I sat beside him.</p>
+                
+                <p>"You blame me," I said.</p>
+                
+                <p>He didn't look up. "Do you blame yourself?"</p>
+                
+                <p>"Yes," I said. "Every step."</p>
+                
+                <p>The wind shifted. Khalifa and Massoud's faint argument over the last date floated by, then died.</p>
+                
+                <p>"You could've ordered him back," Ali said finally.</p>
+                
+                <p>"I did," I said. "But we're not soldiers. We're boys with no rifles, no rules, no captain. Samir made his choice."</p>
+                
+                <p>Ali's jaw clenched. "He trusted you."</p>
+                
+                <p>That one hurt more than the blast.</p>
+                
+                <p>"I know," I said. "That's why I carved his name into that train. So even if we die out here, something will still say he lived."</p>
+                
+                <p>Ali turned to me, eyes wet but fierce. "Then we better make it to Benghazi. We better bring home enough metal to build a palace. Otherwise—"</p>
+                
+                <p>"Otherwise he died for nothing," I said.</p>
+                
+                <p>We sat there a long while, two shadows at the edge of the grave. Then I stood, brushed sand from my hands, and faced the others.</p>
+                
+                <p>"Pack up," I said. "We leave now."</p>
+                
+                <p>Ahmed looked up, startled. "Now? We haven't eaten."</p>
+                
+                <p>"Then we'll eat in Benghazi," I said. My stomach was hollow but my voice was steel. "Samir's not here to walk with us anymore, so we walk for him."</p>
+                
+                <p>Khalifa cursed under his breath, but he stood. Massoud followed. Ali wiped his face, slung his sack over his shoulder, and fell in line.</p>
+                
+                <p>When I took the first step away from the grave, the sand crunched under my heel. It sounded like breaking bone.</p>
+                
+                <p class="font-medium text-gray-800">I didn't look back.</p>
+              </div>
+            </div>
+            
+            <div class="glass-effect p-10 shadow-xl border-l-4 border-accent">
+              <h4 class="font-display text-2xl font-medium text-gray-800 mb-6">Release Information</h4>
+              <div class="space-y-3 font-serif text-gray-600 text-lg">
+                <p><strong class="text-gray-800">Format:</strong> Amazon Kindle</p>
+                <p><strong class="text-gray-800">Genre:</strong> Historical Fiction</p>
+                <p><strong class="text-gray-800">Status:</strong> Coming Soon</p>
+              </div>
+            </div>
+            
+            <button onclick="notifyMe()" class="bg-accent hover:bg-accent/90 text-white px-12 py-5 font-medium tracking-wide transition-all duration-500 transform hover:scale-110 shadow-2xl hover-glow flex items-center space-x-4">
+              <span class="text-xl">🔔</span>
+              <span>Notify Me When Available</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stories in Quran Books Section -->
+  <section class="py-32 bg-white relative overflow-hidden">
+    <div class="absolute inset-0 shimmer opacity-5"></div>
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="section-number">03</div>
+      <div class="content-overlay">
+        <div class="fade-in text-center mb-24">
+          <div class="inline-flex items-center glass-effect text-emerald-700 px-8 py-4 font-medium tracking-wide mb-8 shadow-lg">
+            ✦ Sacred Stories
+          </div>
+          <h2 class="font-display text-6xl md:text-7xl font-medium text-gray-800 mb-8 tracking-tight text-shadow">Stories in Quran Books</h2>
+          <div class="elegant-divider"></div>
+          <p class="font-serif text-2xl text-gray-600 max-w-4xl mx-auto mt-12 leading-relaxed">
+            Discover the timeless wisdom and profound lessons from the Holy Quran through beautifully retold stories.
+          </p>
+        </div>
+
+        <div class="max-w-4xl mx-auto">
+          <!-- Main Quran Stories Book -->
+          <div class="fade-in bg-white shadow-2xl border border-gray-100 overflow-hidden hover-glow transition-all duration-500 mb-16">
+            <div class="book-spine"></div>
+            <div class="grid md:grid-cols-2 gap-0">
+              <!-- Book Cover -->
+              <div class="h-96 bg-gradient-to-br from-emerald-100 via-teal-50 to-emerald-200 flex items-center justify-center relative p-8 overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-emerald-200/50 to-teal-200/50"></div>
+                <div class="absolute top-8 right-8 bg-emerald-700 text-white px-6 py-3 text-sm font-medium tracking-wide shadow-lg">
+                  FEATURED
+                </div>
+                <div class="text-center relative z-10">
+                  <!-- Beautiful Quran Icon -->
+                  <div class="relative mb-8">
+                    <svg class="w-32 h-32 mx-auto text-emerald-600 floating-element" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M19 2H5c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM5 4h14v16H5V4z"/>
+                      <path d="M7 6h10v2H7V6zm0 4h10v2H7v-2zm0 4h7v2H7v-2z"/>
+                      <circle cx="12" cy="15" r="1" fill="currentColor" opacity="0.6"/>
+                    </svg>
+                    <!-- Decorative elements -->
+                    <div class="absolute -top-2 -right-2 w-8 h-8 bg-emerald-300/30 rounded-full floating-element" style="animation-delay: -1s;"></div>
+                    <div class="absolute -bottom-2 -left-2 w-6 h-6 bg-teal-300/30 rounded-full floating-element" style="animation-delay: -3s;"></div>
+                  </div>
+                  <h3 class="font-display text-4xl font-medium mb-4 text-gray-800 text-shadow">Stories in Quran</h3>
+                  <p class="font-serif text-xl text-gray-600 italic">Sacred Wisdom & Timeless Lessons</p>
+                </div>
+              </div>
+              
+              <!-- Book Details -->
+              <div class="p-12 flex flex-col justify-center">
+                <h3 class="font-display text-3xl font-medium text-gray-800 mb-8 tracking-tight">Stories in Quran Books</h3>
+                <p class="font-serif text-gray-700 mb-8 leading-relaxed text-lg">
+                  Immerse yourself in the profound stories from the Holy Quran, beautifully retold with reverence and care. These sacred narratives offer timeless wisdom, moral guidance, and spiritual inspiration for readers seeking to understand the deeper meanings within Islamic teachings.
+                </p>
+                
+                <div class="space-y-6 mb-10">
+                  <div class="flex items-center space-x-4 text-emerald-700 font-medium text-lg">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="tracking-wide">Authentic Quranic Stories</span>
+                  </div>
+                  <div class="flex items-center space-x-4 text-emerald-700 font-medium text-lg">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="tracking-wide">Moral & Spiritual Guidance</span>
+                  </div>
+                  <div class="flex items-center space-x-4 text-emerald-700 font-medium text-lg">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="tracking-wide">For All Ages</span>
+                  </div>
+                </div>
+                
+                <a href="https://victoryhourcupcakes.my.canva.site/html-template-for-victory-hour-quran-stories" target="_blank" class="bg-emerald-700 hover:bg-emerald-800 text-white px-12 py-5 font-medium tracking-wide transition-all duration-500 transform hover:scale-105 shadow-xl hover-glow flex items-center space-x-4 w-fit">
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                  <span>Read Stories Online</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Free Ebooks Section -->
+  <section class="py-32 elegant-bg relative overflow-hidden">
+    <div class="absolute inset-0 shimmer opacity-5"></div>
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="section-number">04</div>
+      <div class="content-overlay">
+        <div class="fade-in text-center mb-24">
+          <div class="inline-flex items-center glass-effect text-secondary px-8 py-4 font-medium tracking-wide mb-8 shadow-lg">
+            ✦ Free Reading
+          </div>
+          <h2 class="font-display text-6xl md:text-7xl font-medium text-gray-800 mb-8 tracking-tight text-shadow">Free Ebooks</h2>
+          <div class="elegant-divider"></div>
+          <p class="font-serif text-2xl text-gray-600 max-w-4xl mx-auto mt-12 leading-relaxed">
+            Enjoy these complimentary stories as a gift to readers everywhere.
+          </p>
+        </div>
+
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16">
+          <!-- Stories of the Prophets -->
+          <div class="fade-in bg-white shadow-2xl border border-gray-100 overflow-hidden hover-glow transition-all duration-500">
+            <div class="book-spine"></div>
+            <div class="h-80 bg-gradient-to-br from-secondary/20 via-accent/20 to-secondary/30 flex items-center justify-center relative p-8 overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-br from-secondary/30 to-accent/30"></div>
+              <div class="absolute top-8 right-8 bg-secondary text-white px-6 py-3 text-sm font-medium tracking-wide shadow-lg">
+                FREE
+              </div>
+              <div class="text-center relative z-10">
+                <div class="text-9xl mb-8 text-secondary/60 floating-element">📜</div>
+                <h3 class="font-display text-3xl font-medium mb-4 text-gray-800 text-shadow">Stories of the Prophets</h3>
+                <p class="font-serif text-xl text-gray-600 italic">From the Holy Quran</p>
+              </div>
+            </div>
+            <div class="p-10">
+              <h3 class="font-display text-2xl font-medium text-gray-800 mb-6 tracking-tight">Stories of the Prophets</h3>
+              <p class="font-serif text-gray-600 mb-8 leading-relaxed text-lg">
+                A beautiful collection of Prophet stories from the Holy Quran, retold with reverence and care. 
+                These timeless tales offer wisdom, guidance, and inspiration for readers of all ages.
+              </p>
+              <div class="flex flex-col gap-6">
+                <div class="flex items-center space-x-4 text-secondary font-medium text-lg">
+                  <span class="text-2xl">✦</span>
+                  <span class="tracking-wide">Completely Free!</span>
+                </div>
+                <a href="https://victoryhourcupcakes.my.canva.site/dagxnvagzwe" target="_blank" class="bg-secondary hover:bg-secondary/90 text-white px-10 py-4 font-medium tracking-wide transition-all duration-500 transform hover:scale-105 shadow-xl hover-glow flex items-center space-x-4 w-fit">
+                  <span class="text-xl">📖</span>
+                  <span>Read Free Online</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Victory Hour Routine -->
+          <div class="fade-in bg-white shadow-2xl border border-gray-100 overflow-hidden hover-glow transition-all duration-500">
+            <div class="book-spine"></div>
+            <div class="h-80 bg-gradient-to-br from-accent/20 via-orange-200 to-accent/30 flex items-center justify-center relative p-8 overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-br from-accent/30 to-orange-300/30"></div>
+              <div class="absolute top-8 right-8 bg-accent text-white px-6 py-3 text-sm font-medium tracking-wide shadow-lg">
+                FREE
+              </div>
+              <div class="text-center relative z-10">
+                <div class="text-9xl mb-8 text-accent/60 floating-element">🌅</div>
+                <h3 class="font-display text-3xl font-medium mb-4 text-gray-800 text-shadow">Victory Hour Routine</h3>
+                <p class="font-serif text-xl text-gray-600 italic">Transform Your Mornings</p>
+              </div>
+            </div>
+            <div class="p-10">
+              <h3 class="font-display text-2xl font-medium text-gray-800 mb-6 tracking-tight">Victory Hour Routine</h3>
+              <p class="font-serif text-gray-600 mb-8 leading-relaxed text-lg">
+                Discover the power of intentional mornings with this transformative guide. Learn how to create a morning routine that sets you up for success, productivity, and fulfillment every single day.
+              </p>
+              <div class="flex flex-col gap-6">
+                <div class="flex items-center space-x-4 text-accent font-medium text-lg">
+                  <span class="text-2xl">✦</span>
+                  <span class="tracking-wide">Completely Free!</span>
+                </div>
+                <a href="https://victoryhourcupcakes.my.canva.site/victory-hour-routine-ebook" target="_blank" class="bg-accent hover:bg-accent/90 text-white px-10 py-4 font-medium tracking-wide transition-all duration-500 transform hover:scale-105 shadow-xl hover-glow flex items-center space-x-4 w-fit">
+                  <span class="text-xl">📖</span>
+                  <span>Read Free Online</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Books Section -->
+  <section id="books" class="py-32 elegant-bg relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-number">05</div>
+      <div class="content-overlay">
+        <div class="fade-in text-center mb-24">
+          <h2 class="font-display text-6xl md:text-7xl font-medium text-gray-800 mb-8 tracking-tight text-shadow">Published Works</h2>
+          <div class="elegant-divider"></div>
+          <p class="font-serif text-2xl text-gray-600 max-w-4xl mx-auto mt-12 leading-relaxed">
+            Discover a collection of stories that inspire, educate, and empower readers of all ages.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+          <!-- Book 1 - The Lemonade Stand That Gave Back -->
+          <div class="fade-in book-card bg-white overflow-hidden shadow-2xl stagger-animation" style="--i: 1;">
+            <div class="book-spine"></div>
+            <div class="h-80 bg-gradient-to-br from-yellow-200 to-orange-300 flex items-center justify-center p-8 relative overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-br from-yellow-300/30 to-orange-400/30"></div>
+              <div class="text-center relative z-10">
+                <div class="text-8xl mb-8 floating-element">🍋</div>
+                <h3 class="font-display text-3xl font-medium text-gray-800 mb-3 text-shadow">The Lemonade Stand</h3>
+                <p class="font-serif text-gray-700 italic text-lg">That Gave Back</p>
+              </div>
+            </div>
+            <div class="p-10">
+              <h3 class="font-display text-2xl font-medium text-gray-800 mb-6">The Lemonade Stand That Gave Back</h3>
+              <p class="font-serif text-gray-600 mb-8 leading-relaxed text-lg">
+                A heartwarming children's story about generosity, community, and the joy of giving back to others.
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="text-accent font-medium text-xl">Available Now</span>
+                <a href="https://www.amazon.ca/Lemonade-Stand-That-Gave-Back-ebook/dp/B0FNL47WS8/" target="_blank" class="bg-accent hover:bg-accent/90 text-white px-8 py-4 font-medium tracking-wide transition-all duration-500 transform hover:scale-105 shadow-lg hover-glow">
+                  Buy on Amazon
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Book 2 - The Book That Gave Gold -->
+          <div class="fade-in book-card bg-white overflow-hidden shadow-2xl stagger-animation" style="--i: 2;">
+            <div class="book-spine"></div>
+            <div class="h-80 bg-gradient-to-br from-yellow-300 to-amber-400 flex items-center justify-center p-8 relative overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-br from-yellow-400/30 to-amber-500/30"></div>
+              <div class="text-center relative z-10">
+                <div class="text-8xl mb-8 floating-element">📚✨</div>
+                <h3 class="font-display text-3xl font-medium text-gray-800 mb-3 text-shadow">The Book That</h3>
+                <p class="font-serif text-gray-700 italic text-lg">Gave Gold</p>
+              </div>
+            </div>
+            <div class="p-10">
+              <h3 class="font-display text-2xl font-medium text-gray-800 mb-6">The Book That Gave Gold</h3>
+              <p class="font-serif text-gray-600 mb-8 leading-relaxed text-lg">
+                A magical children's tale about the true treasures found in books and the golden wisdom they contain.
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="text-accent font-medium text-xl">Available Now</span>
+                <a href="https://www.amazon.ca/Book-That-Gave-Gold-treasures/dp/B0FP97T2SW/" target="_blank" class="bg-accent hover:bg-accent/90 text-white px-8 py-4 font-medium tracking-wide transition-all duration-500 transform hover:scale-105 shadow-lg hover-glow">
+                  Buy on Amazon
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Book 3 - Moe's Magical Cupcakes -->
+          <div class="fade-in book-card bg-white overflow-hidden shadow-2xl stagger-animation" style="--i: 3;">
+            <div class="book-spine"></div>
+            <div class="h-80 bg-gradient-to-br from-pink-200 to-purple-300 flex items-center justify-center p-8 relative overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-br from-pink-300/30 to-purple-400/30"></div>
+              <div class="text-center relative z-10">
+                <div class="text-8xl mb-8 floating-element">🧁</div>
+                <h3 class="font-display text-3xl font-medium text-gray-800 mb-3 text-shadow">Moe's Magical</h3>
+                <p class="font-serif text-gray-700 italic text-lg">Cupcakes</p>
+              </div>
+            </div>
+            <div class="p-10">
+              <h3 class="font-display text-2xl font-medium text-gray-800 mb-6">Moe's Magical Cupcakes</h3>
+              <p class="font-serif text-gray-600 mb-8 leading-relaxed text-lg">
+                A delightful children's adventure filled with magic, friendship, and the sweetest surprises.
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="text-accent font-medium text-xl">Available Now</span>
+                <button onclick="buyBook('Moe\'s Magical Cupcakes')" class="bg-accent hover:bg-accent/90 text-white px-8 py-4 font-medium tracking-wide transition-all duration-500 transform hover:scale-105 shadow-lg hover-glow">
+                  Buy on Amazon
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Book 4 - Victory Hour -->
+          <div class="fade-in book-card bg-white overflow-hidden shadow-2xl stagger-animation" style="--i: 4;">
+            <div class="book-spine"></div>
+            <div class="h-80 bg-gradient-to-br from-accent/40 to-secondary/20 flex items-center justify-center p-8 relative overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-br from-accent/50 to-secondary/30"></div>
+              <div class="text-center relative z-10">
+                <div class="text-8xl mb-8 text-accent/70 floating-element">🚀</div>
+                <h3 class="font-display text-3xl font-medium text-gray-800 mb-3 text-shadow">Victory Hour</h3>
+                <p class="font-serif text-gray-600 italic text-lg">Triumph Over Adversity</p>
+              </div>
+            </div>
+            <div class="p-10">
+              <h3 class="font-display text-2xl font-medium text-gray-800 mb-6">Victory Hour</h3>
+              <p class="font-serif text-gray-600 mb-8 leading-relaxed text-lg">
+                A motivational guide to overcoming life's obstacles and achieving your dreams against all odds.
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="text-accent font-medium text-xl">$16.99</span>
+                <button onclick="buyBook('Victory Hour')" class="bg-accent hover:bg-accent/90 text-white px-8 py-4 font-medium tracking-wide transition-all duration-500 transform hover:scale-105 shadow-lg hover-glow">
+                  Buy on Amazon
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fighting World Hunger Section -->
+  <section id="hunger" class="py-32 bg-white relative overflow-hidden">
+    <div class="absolute inset-0 shimmer opacity-5"></div>
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="section-number">06</div>
+      <div class="content-overlay">
+        <div class="fade-in text-center mb-24">
+          <div class="inline-flex items-center glass-effect text-red-700 px-8 py-4 font-medium tracking-wide mb-8 shadow-lg">
+            🍽️ Fighting World Hunger
+          </div>
+          <h2 class="font-display text-6xl md:text-7xl font-medium text-gray-800 mb-8 tracking-tight text-shadow">A Page Against Hunger</h2>
+          <div class="elegant-divider"></div>
+        </div>
+
+        <div class="max-w-5xl mx-auto">
+          <!-- Main Message -->
+          <div class="fade-in glass-effect p-12 shadow-2xl border-l-4 border-red-600 mb-16">
+            <div class="font-serif text-gray-700 leading-relaxed space-y-6 text-xl">
+              <p>Around the world, millions of children and families go to bed hungry each night.</p>
+              
+              <p>Hunger doesn't just happen far away — it can also be found in our own cities, neighborhoods, and schools. Sometimes, it's closer than we think. That's why <strong class="text-red-700 font-medium">10% of the proceeds from the sale of this book go directly to feed the hungry.</strong></p>
+              
+              <p>Every copy you read and share helps put food on someone's table. But this mission isn't only about money — it's about awareness, kindness, and action.</p>
+            </div>
+          </div>
+
+          <!-- What Young People Can Do -->
+          <div class="fade-in bg-white shadow-2xl border border-gray-100 overflow-hidden mb-16">
+            <div class="bg-gradient-to-r from-red-600 to-orange-600 text-white p-8">
+              <h3 class="font-display text-4xl font-medium mb-4 text-center">What Young People Can Do</h3>
+              <p class="font-serif text-xl text-center opacity-90">Even small steps can make a big difference. Here's how you can help fight hunger:</p>
+            </div>
+            
+            <div class="p-12">
+              <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-8">
+                  <div class="flex items-start space-x-6">
+                    <div class="text-4xl text-red-600 floating-element">🥪</div>
+                    <div>
+                      <h4 class="font-display text-2xl font-medium text-gray-800 mb-3">Share Food</h4>
+                      <p class="font-serif text-gray-600 leading-relaxed text-lg">Donate a snack, sandwich, or packed meal to someone who needs it.</p>
+                    </div>
+                  </div>
+                  
+                  <div class="flex items-start space-x-6">
+                    <div class="text-4xl text-orange-600 floating-element" style="animation-delay: -1s;">🥫</div>
+                    <div>
+                      <h4 class="font-display text-2xl font-medium text-gray-800 mb-3">Support Food Drives</h4>
+                      <p class="font-serif text-gray-600 leading-relaxed text-lg">Bring canned goods to school or community collections.</p>
+                    </div>
+                  </div>
+                  
+                  <div class="flex items-start space-x-6">
+                    <div class="text-4xl text-yellow-600 floating-element" style="animation-delay: -2s;">👀</div>
+                    <div>
+                      <h4 class="font-display text-2xl font-medium text-gray-800 mb-3">Look Around</h4>
+                      <p class="font-serif text-gray-600 leading-relaxed text-lg">Notice if someone in your class or neighborhood doesn't have enough to eat — speak up, tell a teacher, or invite them to share.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="space-y-8">
+                  <div class="flex items-start space-x-6">
+                    <div class="text-4xl text-green-600 floating-element" style="animation-delay: -3s;">💡</div>
+                    <div>
+                      <h4 class="font-display text-2xl font-medium text-gray-800 mb-3">Be Creative</h4>
+                      <p class="font-serif text-gray-600 leading-relaxed text-lg">Start a "kindness club" with your friends to collect food or raise awareness in your school.</p>
+                    </div>
+                  </div>
+                  
+                  <div class="glass-effect p-8 border-l-4 border-accent shadow-lg">
+                    <h4 class="font-display text-3xl font-medium text-gray-800 mb-4">A Big Dream</h4>
+                    <p class="font-serif text-gray-700 leading-relaxed text-lg italic">No child should ever have to wonder when their next meal will be. Together, with honesty, kindness and action, we can help make hunger a problem of the past.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Section -->
+  <section class="py-32 elegant-bg relative overflow-hidden">
+    <div class="absolute inset-0 shimmer opacity-5"></div>
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="section-number">07</div>
+      <div class="content-overlay">
+        <div class="fade-in text-center mb-24">
+          <h2 class="font-display text-6xl md:text-7xl font-medium text-gray-800 mb-8 tracking-tight text-shadow">Making an Impact</h2>
+          <div class="elegant-divider"></div>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-16 text-center">
+          <div class="fade-in glass-effect p-16 shadow-2xl border border-gray-100 hover-glow transition-all duration-500 stagger-animation" style="--i: 1;">
+            <div class="text-7xl mb-10 text-accent/70 floating-element">🍽️</div>
+            <h3 class="font-display text-3xl font-medium text-gray-800 mb-6">10% Donated</h3>
+            <p class="font-serif text-gray-600 leading-relaxed text-lg">Of all book profits go directly to feeding the hungry worldwide</p>
+          </div>
+          
+          <div class="fade-in glass-effect p-16 shadow-2xl border border-gray-100 hover-glow transition-all duration-500 stagger-animation" style="--i: 2;">
+            <div class="text-7xl mb-10 text-secondary/70 floating-element">📖</div>
+            <h3 class="font-display text-3xl font-medium text-gray-800 mb-6">Stories That Matter</h3>
+            <p class="font-serif text-gray-600 leading-relaxed text-lg">Each book designed to uplift, educate, and empower readers</p>
+          </div>
+          
+          <div class="fade-in glass-effect p-16 shadow-2xl border border-gray-100 hover-glow transition-all duration-500 stagger-animation" style="--i: 3;">
+            <div class="text-7xl mb-10 text-accent/70 floating-element">🌍</div>
+            <h3 class="font-display text-3xl font-medium text-gray-800 mb-6">Global Reach</h3>
+            <p class="font-serif text-gray-600 leading-relaxed text-lg">Connecting cultures and communities through the power of storytelling</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-32 elegant-bg relative overflow-hidden">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="section-number">08</div>
+      <div class="content-overlay">
+        <div class="fade-in text-center mb-24">
+          <h2 class="font-display text-6xl md:text-7xl font-medium text-gray-800 mb-8 tracking-tight text-shadow">Get In Touch</h2>
+          <div class="elegant-divider"></div>
+          <p class="font-serif text-2xl text-gray-600 max-w-4xl mx-auto mt-12 leading-relaxed">
+            Ready to embark on a literary journey? Connect with me for speaking engagements, 
+            collaborations, or just to share your thoughts about the books.
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-16 mb-20">
+          <div class="fade-in glass-effect p-12 shadow-2xl border border-gray-100 hover-glow transition-all duration-500">
+            <div class="text-6xl mb-8 text-accent/70 floating-element">📧</div>
+            <h3 class="font-display text-3xl font-medium text-gray-800 mb-6">Email</h3>
+            <p class="font-serif text-gray-600 text-xl">contact@emhemedauthor.com</p>
+          </div>
+          
+          <div class="fade-in glass-effect p-12 shadow-2xl border border-gray-100 hover-glow transition-all duration-500">
+            <div class="text-6xl mb-8 text-secondary/70 floating-element">🏢</div>
+            <h3 class="font-display text-3xl font-medium text-gray-800 mb-6">Enterprise</h3>
+            <p class="font-serif text-gray-600 text-xl">Victory Hour Enterprises™</p>
+          </div>
+        </div>
+        
+        <div class="fade-in text-center space-x-8">
+          <button onclick="contactAuthor()" class="bg-accent hover:bg-accent/90 text-white px-16 py-5 font-medium tracking-wide transition-all duration-500 transform hover:scale-110 shadow-2xl hover-glow">
+            Send Message
+          </button>
+          <button onclick="newsletter()" class="border-2 border-accent text-accent hover:bg-accent hover:text-white px-16 py-5 font-medium tracking-wide transition-all duration-500 hover:scale-105">
+            Join Newsletter
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-20 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900"></div>
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <div class="grid md:grid-cols-3 gap-16 mb-16">
+        <div>
+          <h3 class="font-title text-3xl font-medium mb-8 gradient-text">Emhemed Elahresh</h3>
+          <p class="font-serif text-gray-300 leading-relaxed text-lg">
+            Author, visionary, and storyteller dedicated to creating meaningful literature that makes a difference.
+          </p>
+        </div>
+        
+        <div>
+          <h3 class="font-display text-2xl font-medium mb-8 text-white">Quick Links</h3>
+          <div class="space-y-4">
+            <a href="#home" class="block font-serif text-gray-300 hover:text-accent transition-colors text-lg">Home</a>
+            <a href="#about" class="block font-serif text-gray-300 hover:text-accent transition-colors text-lg">About</a>
+            <a href="#books" class="block font-serif text-gray-300 hover:text-accent transition-colors text-lg">Books</a>
+            <a href="#hunger" class="block font-serif text-gray-300 hover:text-red-400 transition-colors text-lg">🍽️ Fight World Hunger</a>
+            <a href="#contact" class="block font-serif text-gray-300 hover:text-accent transition-colors text-lg">Contact</a>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="font-display text-2xl font-medium mb-8 text-white">Mission</h3>
+          <p class="font-serif text-gray-300 leading-relaxed text-lg">
+            10% of all book profits go to feed the hungry. Every purchase makes a difference.
+          </p>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-700 pt-12 text-center">
+        <p class="font-serif text-gray-300 mb-4 text-lg">&copy; 2025 Emhemed Elahresh. All rights reserved. Victory Hour Enterprises™</p>
+        <p class="font-serif text-accent mb-6 text-xl font-medium">10% of all book profits go to feed the hungry worldwide.</p>
+        <p class="font-serif text-gray-400 mb-3 text-lg">
+          Built by <a href="https://www.victoryhourmedia.com" target="_blank" class="text-accent hover:text-accent/80 transition-colors font-medium">Victory Hour Multimedia Inc.</a>
+        </p>
+        <p class="font-serif text-accent font-medium text-xl">
+          Let's build something amazing.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+        // Close mobile menu if open
+        document.getElementById('mobile-menu').classList.add('hidden');
+      });
+    });
+
+    // Enhanced fade in animation on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Book purchase functionality
+    function buyBook(bookTitle) {
+      alert(`Thank you for your interest in "${bookTitle}"! This would normally redirect to Amazon. Remember, 10% of profits help feed the hungry!`);
+    }
+
+    // Notify me functionality for The Pickers
+    function notifyMe() {
+      const email = prompt('Enter your email to be notified when "The Pickers" is available:');
+      if (email && email.includes('@')) {
+        alert('Thank you! We\'ll notify you as soon as "The Pickers" is available on Amazon Kindle. Remember, 10% of profits will help feed the hungry!');
+      } else if (email) {
+        alert('Please enter a valid email address.');
+      }
+    }
+
+    // Notify me functionality for Piggy Bank Pirates
+    function notifyMePirates() {
+      const email = prompt('Enter your email to be notified when "Piggy Bank Pirates & the Treasure Plan" is available:');
+      if (email && email.includes('@')) {
+        alert('Thank you! We\'ll notify you as soon as "Piggy Bank Pirates & the Treasure Plan" (Little Money Makers™ Book 2) is available. Remember, 10% of profits will help feed the hungry!');
+      } else if (email) {
+        alert('Please enter a valid email address.');
+      }
+    }
+
+    // Contact functionality
+    function contactAuthor() {
+      alert('Thank you for your interest! This would normally open your email client to contact@emhemedauthor.com');
+    }
+
+    // Newsletter signup
+    function newsletter() {
+      const email = prompt('Enter your email to join our newsletter:');
+      if (email && email.includes('@')) {
+        alert('Thank you for subscribing! You\'ll receive updates about new books and our mission to feed the hungry.');
+      } else if (email) {
+        alert('Please enter a valid email address.');
+      }
+    }
+
+    // Enhanced loading animations
+    window.addEventListener('load', function() {
+      // Stagger animations for book cards
+      const bookCards = document.querySelectorAll('.stagger-animation');
+      bookCards.forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.2}s`;
+      });
+      
+      // Add parallax effect to hero section
+      window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
+        const hero = document.querySelector('#home');
+        if (hero) {
+          hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+        }
+      });
+    });
+  </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97e541e9514336c9',t:'MTc1Nzc0MTQ3Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
